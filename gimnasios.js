@@ -1,3 +1,5 @@
+//Creamos el array de los gimnasios conteniendo una descripcion
+
 const gimnasios = [
     {
         lider:"Brock",
@@ -55,6 +57,8 @@ const gimnasios = [
         pokemon: "Rhyhorn, Dugtrio, Nidoqueen y Nidoking"
     }
 ];
+
+//Funcion para mostrar la informacion en pantalla segun el gimnasio elegido 
 
 const infogimnasio = document.getElementById("infoGimnasio");
 function mostrarGimnasio(numero){

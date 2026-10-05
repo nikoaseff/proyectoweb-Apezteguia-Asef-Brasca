@@ -1,7 +1,10 @@
+// Creamos el array equipo 
+
 const equipo = [];
 
 const slots = document.querySelectorAll(".slot");
 
+//Desarrollamos la funcion para poder operar con el array equipo y agregar pokemones
 
 function agregarPokemon(nombre, imagen) {
 
@@ -27,6 +30,7 @@ function agregarPokemon(nombre, imagen) {
     actualizarEquipo();
 }
 
+//Funcion para mostrar y manejar el equipo en pantalla
 
 function actualizarEquipo() {
 
@@ -49,6 +53,8 @@ function actualizarEquipo() {
     });
 
 }
+
+//Creamos la funcion para sacar pokemones del equipo a eleccion
 
 function quitarPokemon(posicion) {
 

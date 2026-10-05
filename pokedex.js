@@ -1,3 +1,5 @@
+//Creamos el array de la pokedex, inicialmente con 20 pokemones, con su nro de pokedex, nombre, tipo y su imagen
+
 const pokemones = [
     {
         id: 1,
@@ -169,6 +171,7 @@ function mostrarPokemones(lista) {
 
 }
 
+//Funcion para mostrar pokemon y sus datos segun la busqueda
 
 buscarPokemon.addEventListener("input", function() {
 

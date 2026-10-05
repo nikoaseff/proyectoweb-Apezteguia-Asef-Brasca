@@ -1,3 +1,5 @@
+//Creamos el array de las ciudades del mapa con su respectiva descripcion
+
 const ciudades = [
     {
         nombre: "Pueblo Paleta",
@@ -28,6 +30,7 @@ const ciudades = [
 
 const infoCiudad = document.getElementById("infoCiudad");
 
+//Funcion para mostrar la ciudad con su descripcion en pantalla
 
 function mostrarCiudad(numero) {
 
