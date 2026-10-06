@@ -17,8 +17,8 @@ const gimnasios = [
 
     {
         lider:"Lt. Surge",
-        ciudad: "Ciudad Carmin",
-        tipo: "Electrico",
+        ciudad: "Ciudad Carmín",
+        tipo: "Eléctrico",
         pokemon: "Voltorb, Pikachu y Raichu"
     },
 
@@ -58,19 +58,21 @@ const gimnasios = [
     }
 ];
 
-//Funcion para mostrar la informacion en pantalla segun el gimnasio elegido 
+const infoGimnasio = document.getElementById("infoGimnasio");
 
-const infogimnasio = document.getElementById("infoGimnasio");
-function mostrarGimnasio(numero){
+/**
+ * Muestra los datos de la opción seleccionada.
+ * @method mostrarGimnasio
+ * @param {number} numero - Posición de la opción en el array.
+ * @returns {void}
+ */
+const mostrarGimnasio = (numero) => {
+    if (!Number.isInteger(numero) || numero < 0 || numero >= gimnasios.length) return;
     const gimnasio = gimnasios[numero];
-
-    infogimnasio.innerHTML = `
-        <h2>${gimnasio.lider}</h2>
-
+    infoGimnasio.innerHTML = `<h2>${gimnasio.lider}</h2>
         <p>Ciudad: ${gimnasio.ciudad}</p>
-
         <p>Tipo: ${gimnasio.tipo}</p>
+        <p>Pokémon: ${gimnasio.pokemon}</p>`;
+};
 
-        <p>Pokémon: ${gimnasio.pokemon}</p>
-    `;
-}
+mostrarGimnasio(0);

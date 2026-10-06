@@ -1,134 +1,213 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mi Equipo - KantoDex</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-
-    <header>
-
-        <h2>KantoDex</h2>
-
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="pokedex.html">Pokédex</a>
-            <a href="gimnasios.html">Gimnasios</a>
-            <a href="mapa.html">Mapa de Kanto</a>
-            <a href="equipo.html">Mi Equipo</a>
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <section class="presentacion">
-
-            <h1>Armá tu Equipo</h1>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="nikoaseff, AlitoBrasca y Aleapx">
+        <meta name="description" content="Elegí hasta seis Pokémon diferentes y guardá tu equipo en el navegador.">
+        <meta name="keywords" content="KantoDex, Pokémon, Kanto, Pokédex, gimnasios, equipo">
+        <title>
+            Mi Equipo - KantoDex
+        </title>
+        <link rel="icon" type="image/svg+xml" href="imagenes/favicon.svg">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&amp;display=swap">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body onload="cargarEquipo()">
+        <header>
+            <h1>
+                KantoDex
+            </h1>
+            <nav>
+                <a href="index.html">
+                    Inicio
+                </a>
+                <a href="pokedex.html">
+                    Pokédex
+                </a>
+                <a href="gimnasios.html">
+                    Gimnasios
+                </a>
+                <a href="mapa.html">
+                    Mapa de Kanto
+                </a>
+                <a href="equipo.html" aria-current="page">
+                    Mi Equipo
+                </a>
+            </nav>
+        </header>
+        <main>
+            <div class="contenido">
+            <section class="presentacion">
+                <h2>
+                    Armá tu Equipo
+                </h2>
+                <p>
+                    Elegí hasta 6 Pokémon para formar tu equipo.
+                </p>
+            </section>
+            <section class="equipo">
+                <h2>
+                    Tu equipo
+                </h2>
+                <p id="cantidadEquipo" role="status" aria-live="polite">
+                </p>
+                <div class="slots-equipo">
+                    <div class="slot">
+                        Espacio vacío
+                    </div>
+                    <div class="slot">
+                        Espacio vacío
+                    </div>
+                    <div class="slot">
+                        Espacio vacío
+                    </div>
+                    <div class="slot">
+                        Espacio vacío
+                    </div>
+                    <div class="slot">
+                        Espacio vacío
+                    </div>
+                    <div class="slot">
+                        Espacio vacío
+                    </div>
+                </div>
+            </section>
+            <section class="seleccion-pokemon">
+                <h2>
+                    Elegí tus Pokémon
+                </h2>
+                <p>
+                    Seleccioná entre estos diez Pokémon. Cada uno puede aparecer una sola vez.
+                </p>
+                <div class="lista-seleccion">
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Bulbasaur
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Bulbasaur')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Ivysaur
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Ivysaur')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Venusaur
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Venusaur')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Charmander
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Charmander')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Charmeleon
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Charmeleon')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Charizard
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Charizard')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Squirtle
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Squirtle')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Pikachu
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Pikachu')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Raichu
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Raichu')">
+                            Agregar
+                        </button>
+                    </div>
+                    <div class="pokemon-seleccion">
+                        <span>
+                            Gengar
+                        </span>
+                        <button type="button" onclick="agregarPokemon('Gengar')">
+                            Agregar
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="calculadora" aria-labelledby="tituloCalculo">
+                <h2 id="tituloCalculo">
+                    Planificá tu entrenamiento
+                </h2>
+                <p>
+                    Calculá cuánta experiencia sumarías si cada combate otorgara la misma cantidad de puntos.
+                </p>
+                <form onsubmit="calcularExperiencia(event)" novalidate="">
+                    <div class="campos-calculo">
+                        <div>
+                            <label for="experienciaCombate">
+                                Experiencia por combate
+                            </label>
+                            <input type="number" id="experienciaCombate" min="1" max="100000" step="1" required="" placeholder="Ejemplo: 150" aria-describedby="ayudaExperiencia errorCalculo">
+                            <p class="ayuda" id="ayudaExperiencia">
+                                Un entero entre 1 y 100000 puntos.
+                            </p>
+                        </div>
+                        <div>
+                            <label for="cantidadCombates">
+                                Cantidad de combates
+                            </label>
+                            <input type="number" id="cantidadCombates" min="1" max="1000" step="1" required="" placeholder="Ejemplo: 10" aria-describedby="ayudaCombates errorCalculo">
+                            <p class="ayuda" id="ayudaCombates">
+                                Un entero entre 1 y 1000 combates.
+                            </p>
+                        </div>
+                    </div>
+                    <button type="submit">
+                        Calcular experiencia
+                    </button>
+                    <p class="error" id="errorCalculo" role="alert">
+                    </p>
+                    <output class="resultado" id="resultadoExperiencia" for="experienciaCombate cantidadCombates" aria-live="polite">
+                    </output>
+                </form>
+            </section>
+            </div>
+        </main>
+        <footer>
             <p>
-                Elegí hasta 6 Pokémon para formar tu equipo.
+                KantoDex - Taller de Desarrollo Web
             </p>
-
-        </section>
-
-        <section class="equipo">
-
-        <h2>Tu Equipo</h2>
-
-        <div class="slots-equipo">
-
-        <div class="slot">Slot vacío</div>
-        <div class="slot">Slot vacío</div>
-        <div class="slot">Slot vacío</div>
-        <div class="slot">Slot vacío</div>
-        <div class="slot">Slot vacío</div>
-        <div class="slot">Slot vacío</div>
-
-        </div>
-
-    </section>
-
-    <section class="seleccion-pokemon">
-
-    <h2>Elegí tus Pokémon</h2>
-
-    <div class="lista-seleccion">
-
-    <div class="pokemon-seleccion">
-    <span>Bulbasaur</span>
-    <button onclick="agregarPokemon('Bulbasaur', 'img/bulbasaur.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Ivysaur</span>
-    <button onclick="agregarPokemon('Ivysaur', 'img/ivysaur.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Venusaur</span>
-    <button onclick="agregarPokemon('Venusaur', 'img/venusaur.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Charmander</span>
-    <button onclick="agregarPokemon('Charmander', 'img/charmander.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Charmeleon</span>
-    <button onclick="agregarPokemon('Charmeleon', 'img/charmeleon.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Charizard</span>
-    <button onclick="agregarPokemon('Charizard', 'img/charizard.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Squirtle</span>
-    <button onclick="agregarPokemon('Squirtle', 'img/squirtle.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Pikachu</span>
-    <button onclick="agregarPokemon('Pikachu', 'img/pikachu.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Raichu</span>
-    <button onclick="agregarPokemon('Raichu', 'img/raichu.png')">Agregar</button>
-    </div>
-
-    <div class="pokemon-seleccion">
-    <span>Gengar</span>
-    <button onclick="agregarPokemon('Gengar', 'img/gengar.png')">Agregar</button>
-    </div>
-
-    </div>
-
-    </section>
-
-    </main>
-
-
-    <footer>
-        <p>KantoDex - Taller de Desarrollo Web</p>
-    </footer>
-
-    <script src="js/equipo.js"></script>
-
-</body>
-
+        </footer>
+        <script src="js/equipo.js">
+        </script>
+    </body>
 </html>

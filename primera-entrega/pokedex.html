@@ -1,70 +1,69 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Pokédex - KantoDex</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-
-    <header>
-
-        <h2>KantoDex</h2>
-
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="pokedex.html">Pokédex</a>
-            <a href="gimnasios.html">Gimnasios</a>
-            <a href="mapa.html">Mapa de Kanto</a>
-            <a href="equipo.html">Mi Equipo</a>
-        </nav>
-
-    </header>
-
-    <main>
-
-    <section class="presentacion">
-
-        <h1>Pokedex de Kanto</h1>
-
-        <p>
-            Conoce algunos de los Pokemon mas conocidos de la primera generacion.
-        </p>
-
-    </section>
-
-    <section class="buscador">
-
-        <input
-            type="text"
-            id="buscarPokemon"
-            placeholder="Buscar Pokemon..."
-        >
-
-    </section>
-
-    <section
-        class="lista-pokemon"
-        id="listaPokemon">
-
-    </section>
-
-</main>
-
-    <footer>
-        <p>KantoDex - Taller de Desarrollo Web</p>
-    </footer>
-
-    <script src="js/pokedex.js"></script>    
-</body>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="nikoaseff, AlitoBrasca y Aleapx">
+        <meta name="description" content="Buscá Pokémon de Kanto por nombre y conocé su número y tipo.">
+        <meta name="keywords" content="KantoDex, Pokémon, Kanto, Pokédex, gimnasios, equipo">
+        <title>
+            Pokédex - KantoDex
+        </title>
+        <link rel="icon" type="image/svg+xml" href="imagenes/favicon.svg">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&amp;display=swap">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>
+                KantoDex
+            </h1>
+            <nav>
+                <a href="index.html">
+                    Inicio
+                </a>
+                <a href="pokedex.html" aria-current="page">
+                    Pokédex
+                </a>
+                <a href="gimnasios.html">
+                    Gimnasios
+                </a>
+                <a href="mapa.html">
+                    Mapa de Kanto
+                </a>
+                <a href="equipo.html">
+                    Mi Equipo
+                </a>
+            </nav>
+        </header>
+        <main>
+            <div class="contenido">
+            <section class="presentacion">
+                <h2>
+                    Pokédex de Kanto
+                </h2>
+                <p>
+                    Conocé algunos de los Pokémon más conocidos de la primera generación.
+                </p>
+            </section>
+            <section class="buscador">
+                <label for="buscarPokemon">
+                    Buscar Pokémon por nombre
+                </label>
+                <input type="text" id="buscarPokemon" size="30" maxlength="30" placeholder="Ejemplo: Pikachu" oninput="buscar()">
+            </section>
+            <p class="buscador" id="estadoBusqueda" role="status" aria-live="polite">
+            </p>
+            <section class="lista-pokemon" id="listaPokemon">
+            </section>
+            </div>
+        </main>
+        <footer>
+            <p>
+                KantoDex - Taller de Desarrollo Web
+            </p>
+        </footer>
+        <script src="js/pokedex.js">
+        </script>
+    </body>
 </html>

@@ -1,76 +1,87 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gimnasios - KantoDex</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-
-    <header>
-
-        <h2>KantoDex</h2>
-
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="pokedex.html">Pokédex</a>
-            <a href="gimnasios.html">Gimnasios</a>
-            <a href="mapa.html">Mapa de Kanto</a>
-            <a href="equipo.html">Mi Equipo</a>
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <section class="presentacion">
-
-            <h1>Gimnasios de Kanto</h1>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="nikoaseff, AlitoBrasca y Aleapx">
+        <meta name="description" content="Conocé los ocho líderes de gimnasio de Kanto, sus ciudades y sus Pokémon.">
+        <meta name="keywords" content="KantoDex, Pokémon, Kanto, Pokédex, gimnasios, equipo">
+        <title>
+            Gimnasios - KantoDex
+        </title>
+        <link rel="icon" type="image/svg+xml" href="imagenes/favicon.svg">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&amp;display=swap">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>
+                KantoDex
+            </h1>
+            <nav>
+                <a href="index.html">
+                    Inicio
+                </a>
+                <a href="pokedex.html">
+                    Pokédex
+                </a>
+                <a href="gimnasios.html" aria-current="page">
+                    Gimnasios
+                </a>
+                <a href="mapa.html">
+                    Mapa de Kanto
+                </a>
+                <a href="equipo.html">
+                    Mi Equipo
+                </a>
+            </nav>
+        </header>
+        <main>
+            <div class="contenido">
+            <section class="presentacion">
+                <h2>
+                    Gimnasios de Kanto
+                </h2>
+                <p>
+                    Conocé a los líderes de gimnasio y sus Pokémon.
+                </p>
+            </section>
+            <section class="botones-gimnasios">
+                <button type="button" onclick="mostrarGimnasio(0)">
+                    Brock
+                </button>
+                <button type="button" onclick="mostrarGimnasio(1)">
+                    Misty
+                </button>
+                <button type="button" onclick="mostrarGimnasio(2)">
+                    Lt. Surge
+                </button>
+                <button type="button" onclick="mostrarGimnasio(3)">
+                    Erika
+                </button>
+                <button type="button" onclick="mostrarGimnasio(4)">
+                    Koga
+                </button>
+                <button type="button" onclick="mostrarGimnasio(5)">
+                    Sabrina
+                </button>
+                <button type="button" onclick="mostrarGimnasio(6)">
+                    Blaine
+                </button>
+                <button type="button" onclick="mostrarGimnasio(7)">
+                    Giovanni
+                </button>
+            </section>
+            <section class="info-gimnasio" id="infoGimnasio" aria-live="polite">
+            </section>
+            </div>
+        </main>
+        <footer>
             <p>
-                Conocé a los líderes de gimnasio y sus Pokémon.
+                KantoDex - Taller de Desarrollo Web
             </p>
-
-        </section>
-
-        <section class="botones-gimnasios">
-
-    <button onclick="mostrarGimnasio(0)">Brock</button>
-    <button onclick="mostrarGimnasio(1)">Misty</button>
-    <button onclick="mostrarGimnasio(2)">Lt. Surge</button>
-    <button onclick="mostrarGimnasio(3)">Erika</button>
-    <button onclick="mostrarGimnasio(4)">Koga</button>
-    <button onclick="mostrarGimnasio(5)">Sabrina</button>
-    <button onclick="mostrarGimnasio(6)">Blaine</button>
-    <button onclick="mostrarGimnasio(7)">Giovanni</button>
-
-</section>
-
-        <section class="info-gimnasio" id="infoGimnasio">
-            <h2>Brock</h2>
-            <p>Ciudad: Ciudad Plateada</p>
-            <p>Tipo: Roca</p>
-            <p>Pokemon: Geodude y Onix</p>
-        </section>
-
-    </main>
-
-
-    <footer>
-        <p>KantoDex - Taller de Desarrollo Web</p>
-    </footer>
-
-    <script src="js/gimnasios.js"></script>
-
-</body>
+        </footer>
+        <script src="js/gimnasios.js">
+        </script>
+    </body>
 </html>

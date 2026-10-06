@@ -1,81 +1,81 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mapa de Kanto - KantoDex</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-
-    <header>
-
-        <h2>KantoDex</h2>
-
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="pokedex.html">Pokédex</a>
-            <a href="gimnasios.html">Gimnasios</a>
-            <a href="mapa.html">Mapa de Kanto</a>
-            <a href="equipo.html">Mi Equipo</a>
-        </nav>
-
-    </header>
-
-    <main>
-
-        <section class="presentacion">
-
-            <h1>Mapa de Kanto</h1>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="nikoaseff, AlitoBrasca y Aleapx">
+        <meta name="description" content="Explorá el mapa de Kanto y consultá información sobre algunas de sus ciudades.">
+        <meta name="keywords" content="KantoDex, Pokémon, Kanto, Pokédex, gimnasios, equipo">
+        <title>
+            Mapa de Kanto - KantoDex
+        </title>
+        <link rel="icon" type="image/svg+xml" href="imagenes/favicon.svg">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&amp;display=swap">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>
+                KantoDex
+            </h1>
+            <nav>
+                <a href="index.html">
+                    Inicio
+                </a>
+                <a href="pokedex.html">
+                    Pokédex
+                </a>
+                <a href="gimnasios.html">
+                    Gimnasios
+                </a>
+                <a href="mapa.html" aria-current="page">
+                    Mapa de Kanto
+                </a>
+                <a href="equipo.html">
+                    Mi Equipo
+                </a>
+            </nav>
+        </header>
+        <main>
+            <div class="contenido">
+            <section class="presentacion">
+                <h2>
+                    Mapa de Kanto
+                </h2>
+                <p>
+                    Conocé algunas de las ciudades más importantes de la región.
+                </p>
+            </section>
+            <section class="botones-ciudades">
+                <button type="button" onclick="mostrarCiudad(0)">
+                    Pueblo Paleta
+                </button>
+                <button type="button" onclick="mostrarCiudad(1)">
+                    Ciudad Verde
+                </button>
+                <button type="button" onclick="mostrarCiudad(2)">
+                    Ciudad Plateada
+                </button>
+                <button type="button" onclick="mostrarCiudad(3)">
+                    Ciudad Celeste
+                </button>
+                <button type="button" onclick="mostrarCiudad(4)">
+                    Ciudad Carmín
+                </button>
+            </section>
+            <section class="info-ciudad" id="infoCiudad" aria-live="polite">
+            </section>
+            <section class="mapa-imagen">
+                <img src="imagenes/mapa.png" alt="Mapa de Kanto">
+            </section>
+            </div>
+        </main>
+        <footer>
             <p>
-                Conocé algunas de las ciudades más importantes de la región.
+                KantoDex - Taller de Desarrollo Web
             </p>
-
-        </section>
-
-        <section class="botones-ciudades">
-
-        <button onclick="mostrarCiudad(0)">Pueblo Paleta</button>
-        <button onclick="mostrarCiudad(1)">Ciudad Verde</button>
-        <button onclick="mostrarCiudad(2)">Ciudad Plateada</button>
-        <button onclick="mostrarCiudad(3)">Ciudad Celeste</button>
-        <button onclick="mostrarCiudad(4)">Ciudad Carmín</button>
-
-        </section>
-
-        <section class="info-ciudad" id="infoCiudad">
-
-        <h2>Pueblo Paleta</h2>
-
-        <p>
-        Pueblo inicial de la aventura.
-        </p>
-
-        </section>
-
-        <section class="mapa-imagen">
-
-    <img src="img/mapa.png" alt="Mapa de Kanto">
-
-</section>
-
-    </main>
-
-    <footer>
-        <p>KantoDex - Taller de Desarrollo Web</p>
-    </footer>
-
-    <script src="js/mapa.js"></script>
-
-</body>
-
+        </footer>
+        <script src="js/mapa.js">
+        </script>
+    </body>
 </html>

@@ -5,140 +5,140 @@ const pokemones = [
         id: 1,
         nombre: "Bulbasaur",
         tipo: "Planta",
-        imagen: "img/bulbasaur.png"
+        imagen: "imagenes/bulbasaur.png"
     },
 
     {
         id:2,
         nombre:"Ivysaur",
         tipo:"Planta",
-        imagen:"img/ivysaur.png"
+        imagen:"imagenes/ivysaur.png"
     },
 
     {
         id:3,
         nombre:"Venusaur",
         tipo:"Planta",
-        imagen:"img/venusaur.png"
+        imagen:"imagenes/venusaur.png"
     },
 
     {
         id: 4,
         nombre: "Charmander",
         tipo: "Fuego",
-        imagen: "img/charmander.png"
+        imagen: "imagenes/charmander.png"
     },
 
     {
         id: 5,
         nombre: "Charmeleon",
         tipo: "Fuego",
-        imagen: "img/charmeleon.png"
+        imagen: "imagenes/charmeleon.png"
     },
 
     {
         id: 6,
         nombre: "Charizard",
         tipo: "Fuego",
-        imagen: "img/charizard.png"
+        imagen: "imagenes/charizard.png"
     },
 
     {
         id: 7,
         nombre: "Squirtle",
         tipo: "Agua",
-        imagen: "img/squirtle.png"
+        imagen: "imagenes/squirtle.png"
     },
 
     {
         id: 8,
         nombre: "Wartortle",
         tipo: "Agua",
-        imagen: "img/wartortle.png"
+        imagen: "imagenes/wartortle.png"
     },
 
     {
         id: 9,
         nombre: "Blastoise",
         tipo: "Agua",
-        imagen: "img/blastoise.png"
+        imagen: "imagenes/blastoise.png"
     },
 
     {
         id: 12,
         nombre: "Butterfree",
         tipo: "Bicho",
-        imagen: "img/butterfree.png"
+        imagen: "imagenes/butterfree.png"
     },
 
     {
         id: 18,
         nombre: "Pidgeot",
         tipo: "Normal",
-        imagen: "img/pidgeot.png"
+        imagen: "imagenes/pidgeot.png"
     },
 
     {
         id: 25,
         nombre: "Pikachu",
-        tipo: "Electrico",
-        imagen: "img/pikachu.png"
+        tipo: "Eléctrico",
+        imagen: "imagenes/pikachu.png"
     },
 
     {
         id: 26,
         nombre: "Raichu",
-        tipo: "Electrico",
-        imagen: "img/raichu.png"
+        tipo: "Eléctrico",
+        imagen: "imagenes/raichu.png"
     },
 
     {
         id: 34,
         nombre: "Nidoking",
         tipo: "Veneno",
-        imagen: "img/nidoking.png"
+        imagen: "imagenes/nidoking.png"
     },
 
     {
         id: 35,
         nombre: "Clefairy",
         tipo: "Hada",
-        imagen: "img/clefairy.png"
+        imagen: "imagenes/clefairy.png"
     },
 
     {
         id: 37,
         nombre: "Vulpix",
         tipo: "Fuego",
-        imagen: "img/vulpix.png"
+        imagen: "imagenes/vulpix.png"
     },
 
     {
         id: 39,
         nombre: "Jigglypuff",
         tipo: "Normal",
-        imagen: "img/jigglypuff.png"
+        imagen: "imagenes/jigglypuff.png"
     },
 
     {
         id: 54,
         nombre: "Psyduck",
         tipo: "Agua",
-        imagen: "img/psyduck.png"
+        imagen: "imagenes/psyduck.png"
     },
 
     {
         id: 66,
         nombre: "Machop",
         tipo: "Lucha",
-        imagen: "img/machop.png"
+        imagen: "imagenes/machop.png"
     },
 
     {
         id: 94,
         nombre: "Gengar",
         tipo: "Fantasma",
-        imagen: "img/gengar.png"
+        imagen: "imagenes/gengar.png"
     },
 ];
 
@@ -146,46 +146,44 @@ const pokemones = [
 const listaPokemon = document.getElementById("listaPokemon");
 const buscarPokemon = document.getElementById("buscarPokemon");
 
-
-function mostrarPokemones(lista) {
-
-    listaPokemon.innerHTML = "";
-
-    lista.forEach(function(pokemon) {
-
-        listaPokemon.innerHTML += `
+/**
+ * Dibuja las tarjetas de la lista recibida y anuncia la cantidad encontrada.
+ * @method mostrarPokemones
+ * @param {Array<Object>} lista - Pokémon que se mostrarán.
+ * @returns {void}
+ */
+const mostrarPokemones = (lista) => {
+    let contenido = "";
+    for (const pokemon of lista) {
+        contenido += `
             <div class="pokemon-card">
-
                 <p>#${pokemon.id}</p>
-
                 <img src="${pokemon.imagen}" alt="${pokemon.nombre}">
-
                 <h3>${pokemon.nombre}</h3>
-
                 <p>${pokemon.tipo}</p>
-
             </div>
         `;
+    }
+    listaPokemon.innerHTML = contenido;
+    document.getElementById("estadoBusqueda").textContent = lista.length === 0
+        ? "No se encontraron Pokémon con ese nombre. Probá otra búsqueda."
+        : `${lista.length} Pokémon encontrados.`;
+};
 
-    });
-
-}
-
-//Funcion para mostrar pokemon y sus datos segun la busqueda
-
-buscarPokemon.addEventListener("input", function() {
-
-    const texto = buscarPokemon.value.toLowerCase();
-
-    const filtrados = pokemones.filter(function(pokemon) {
-
-        return pokemon.nombre.toLowerCase().includes(texto);
-
-    });
-
+/**
+ * Selecciona los nombres que contienen la búsqueda, sin distinguir mayúsculas.
+ * @method buscar
+ * @returns {void}
+ */
+const buscar = () => {
+    const texto = buscarPokemon.value.trim().toLowerCase();
+    const filtrados = [];
+    for (const pokemon of pokemones) {
+        if (pokemon.nombre.toLowerCase().indexOf(texto) !== -1) {
+            filtrados.push(pokemon);
+        }
+    }
     mostrarPokemones(filtrados);
-
-});
-
+};
 
 mostrarPokemones(pokemones);

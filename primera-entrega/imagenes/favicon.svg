@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>KantoDex</title>
+  <circle cx="32" cy="32" r="28" fill="#fff"/>
+  <path d="M4 32a28 28 0 0 1 56 0Z" fill="#d93200"/>
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#222" stroke-width="4"/>
+  <path d="M4 32h56" stroke="#222" stroke-width="4"/>
+  <circle cx="32" cy="32" r="9" fill="#fff" stroke="#222" stroke-width="4"/>
+</svg>

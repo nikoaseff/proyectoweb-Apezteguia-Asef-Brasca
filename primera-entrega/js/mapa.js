@@ -27,18 +27,19 @@ const ciudades = [
     }
 ];
 
-
 const infoCiudad = document.getElementById("infoCiudad");
 
-//Funcion para mostrar la ciudad con su descripcion en pantalla
-
-function mostrarCiudad(numero) {
-
+/**
+ * Muestra los datos de la opción seleccionada.
+ * @method mostrarCiudad
+ * @param {number} numero - Posición de la opción en el array.
+ * @returns {void}
+ */
+const mostrarCiudad = (numero) => {
+    if (!Number.isInteger(numero) || numero < 0 || numero >= ciudades.length) return;
     const ciudad = ciudades[numero];
+    infoCiudad.innerHTML = `<h2>${ciudad.nombre}</h2>
+        <p>${ciudad.descripcion}</p>`;
+};
 
-    infoCiudad.innerHTML = `
-        <h2>${ciudad.nombre}</h2>
-
-        <p>${ciudad.descripcion}</p>
-    `;
-}
+mostrarCiudad(0);
